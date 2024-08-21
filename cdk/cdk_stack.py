@@ -31,3 +31,14 @@ class CdkStack(Stack):
             id="bucket-mercado-btc",
             bucket_name="dados-api-btc"
         )
+
+        fn.add_to_role_policy(statement=iam.PolicyStatement(
+            effect=iam.Effect.ALLOW,
+            actions=[
+                "s3:PutObject",
+                "s3:ListBucket",
+                "s3.PutObjectAcl"
+            ],
+            resources=[bucket.bucket_arn,
+                       f"{bucket.bucket_arn}/*"]
+        ))
