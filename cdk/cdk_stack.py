@@ -37,7 +37,7 @@ class CdkStack(Stack):
             actions=[
                 "s3:PutObject",
                 "s3:ListBucket",
-                "s3.PutObjectAcl"
+                "s3:PutObjectAcl"
             ],
             resources=[bucket.bucket_arn,
                        f"{bucket.bucket_arn}/*"]
