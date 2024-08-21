@@ -24,4 +24,10 @@ class CdkStack(Stack):
         timeout=Duration.seconds(amount=30),
         
         )
-    
+
+
+        bucket = s3.Bucket(
+            scope=self,
+            id="bucket-mercado-btc",
+            bucket_name="dados-api-btc"
+        )
