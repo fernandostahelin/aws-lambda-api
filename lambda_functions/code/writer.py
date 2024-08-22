@@ -13,7 +13,7 @@ class S3Writer:
         self.s3 = boto3.client("s3")
 
     def _write_to_file(self, data: [List, dict]):
-        with open(self.tempfilename, "a") as f:
+        with open(self.tempfile, "a") as f:
             f.write(json.dumps(data) + "\n")
 
     def _write_to_s3(self):
